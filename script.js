@@ -9,7 +9,7 @@ function Book(author, title, pages, read, id){
 function addToCatalog(book){
     let div = document.createElement("div");
     div.style.cssText = "display: flex; flex-direction: column; justify-content: center; align-content: center";
-
+    div.id = 'book-${book.id}';
     let img = document.createElement("img");
     img.src = "Images/pexels-mccutcheon-1148399.jpg";
     img.style.width = "auto";
@@ -43,7 +43,9 @@ function addToCatalog(book){
     div.appendChild(button);
 
     button.addEventListener('click', function(){
-        
+        let deleteId = book.id;
+        myLibrary.splice(deleteId, 1);
+        catalog.removeChild(div);
     })
 
     catalog.appendChild(div);

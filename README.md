@@ -17,3 +17,5 @@ uploadButton.addEventListener('click', function() {
 }
 ```
 
+2. In a javascript function, reference to a document object (div, p etc.) is completely local! AKA, if you create a div element called "div1", and you have a event listener inside this function to delete div1, the event listener is specific to that div!
+
