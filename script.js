@@ -1,5 +1,5 @@
 function Book(author, title, pages, read, id){
-    this.author = author;a
+    this.author = author;
     this.title = title;
     this.pages = pages;
     this.read = read;
@@ -29,11 +29,23 @@ function addToCatalog(book){
     let pages = document.createElement("p");
     pages.textContent = "Number of pages: " + book.pages;
 
+    // Div 2 is the information of the book
     div2.appendChild(author);
     div2.appendChild(title);
     div2.appendChild(pages);
     
     div.appendChild(div2);
+
+    //Delete button
+    let button = document.createElement("button");
+    button.style.cssText = "background-color: red; color: white: font-size: 1rem; width: 50%";
+    button.innerText = "Delete Book";
+    div.appendChild(button);
+
+    button.addEventListener('click', function(){
+        
+    })
+
     catalog.appendChild(div);
 }
 
@@ -60,8 +72,9 @@ uploadButton.addEventListener('click', function() {
 
     console.log(x + y + z);
     myLibrary[id] = new Book(x, y, z, false, id);
+    addToCatalog(myLibrary[id]);
     id++;
-    
+
 }
 )
 
